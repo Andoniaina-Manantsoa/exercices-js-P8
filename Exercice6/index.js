@@ -13,4 +13,12 @@ function clearDisplay() {
 // Calculer le résultat
 function calculateResult() {
     const input = display.value;
-}
+
+    if (/\/0(?![0-9])/.test(input)) {
+        display.value = "Division by zero is not allowed";
+        return;
+    }
+
+    let result = eval(input);
+    display.value = result;
+} 
